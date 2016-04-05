@@ -1,7 +1,10 @@
 import numpy as np
-
+import time
 # merge sort algorithm
 lst = np.random.randint(low = 1, high = 10000, size = 100).tolist()
+
+# use lst2 to create identical list from bubble sort file
+lst2 = lst
 
 def mergesort(lst):
     if len(lst) == 1:
@@ -31,5 +34,7 @@ def merge(lst1, lst2):
         lst3.append(lst2.pop(0))
     
     return lst3
-
-mergesort(lst)
+    
+a = time.time()
+mergesort(lst2)
+merge_time = time.time() - a
